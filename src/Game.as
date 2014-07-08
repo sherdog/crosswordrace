@@ -2,6 +2,8 @@ package
 {
 	import flash.geom.Rectangle;
 	
+	import events.ScreenEvents;
+	
 	import screens.MenuScreen;
 	
 	import starling.core.Starling;
@@ -24,7 +26,21 @@ package
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			init();
+			addEventListener(ScreenEvents.CHANGE_SCREEN, onChangeScreen);
 		}		
+		
+		private function onChangeScreen(event:ScreenEvents):void
+		{
+			switch(event._params.id)
+			{
+				case "play":
+					//load the game screen now!
+					menuScreen.dispose();
+
+					break;
+			}
+			
+		}
 		
 		public function get screenWidth ():int {
 			return viewPort.width;	
@@ -41,6 +57,8 @@ package
 			menuScreen = new MenuScreen(this);
 			menuScreen.initialize();
 			addChild(menuScreen);
+			
+			
 			
 		}
 		

@@ -1,17 +1,19 @@
 package screens
 {
 	import starling.display.Button;
+	import starling.display.Image;
 	import starling.display.Quad;
 	import starling.display.Sprite;
 	import starling.events.Event;
-	import starling.text.TextField;
 	
 	public class MenuScreen extends Sprite
 	{
 		private var background:Quad; //background color
 		private var _game:Game;
-		private var _title:TextField;
+		private var _title:Image;
 		private var _startButton:Button;
+		private var background2:Sprite;
+		private var playButton:Button;
 		
 		public function MenuScreen(game:Game)
 		{
@@ -30,14 +32,22 @@ package screens
 		
 		public function initialize():void
 		{
-			background = new Quad(_game.screenWidth, _game.screenHeight, 0xFF0000);
+			
+			background = new Quad(_game.screenWidth, (_game.screenHeight - 100), 0xCCCCCC);
+			background.y = 80;
 			addChild(background);
 			
-			_title = new TextField(350,50, "Crossword Race", "Arial", 40, 0x000000);
-			_title.x = _game.screenWidth / 2 - 175
-			_title.y = 100;
+			_title = new Image(Assets.getAtlas().getTexture("logo_big"));
+			_title.x = 40;
+			_title.y = 40;
 			
 			addChild(_title);
+			
+			playButton = new Button(Assets.getAtlas().getTexture("btn_play"));
+			playButton.x = (_game.screenWidth/2) - (playButton.width / 2);
+			playButton.y = 400;
+			
+			addChild(playButton);
 			
 			
 			
