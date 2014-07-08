@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e9e147f9637e7d8d57f9a87b65480625:355d746548543dff39d034084cb8fcf7:8aca4155273b61bf85e252c25c6d6d14$ -->
+<TextureAtlas imagePath="GameAssets.png">
+    <SubTexture name="background_stripe" x="753" y="2" width="50" height="50"/>
+    <SubTexture name="btn_play" x="458" y="2" width="236" height="80"/>
+    <SubTexture name="logo_big" x="2" y="2" width="454" height="91"/>
+    <SubTexture name="tile_grad_blue" x="696" y="2" width="55" height="55"/>
+</TextureAtlas>
